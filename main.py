@@ -40,23 +40,17 @@ def main():
                     'Adress' : adress , 
                     'Website' : website
                     }
-                data.append(info)#   __not in here I think. it should be in the other __
+                data.append(info)
             return data # list of dictionnaries
-        all_data.extend(get_data())  # It was .append but to avoid getting a  lst of lists I made it .extend     
-    return all_data # list of lists of dictionnaries 
+        all_data.extend(get_data())  # It was .append but to avoid getting a lst of lists I made it .extend     
+    return all_data 
 
 result = main()
 try :
     data_frame = pd.DataFrame(result)
-    data_frame.to_csv('dataframe4.csv',mode='w')
+    data_frame.to_csv('alldata.csv',mode='w')
 except KeyboardInterrupt as e :
     print(e)
 finally:
     data_frame = pd.DataFrame(result)
-    data_frame.to_csv('dataframe4.csv',mode='w')
-# print(data_frame)
-# print(data)
-# Why It Does not get highlighted ?
-# <a class="track-visit-website" data-analytics='{"click_id":6,"act":2,"dku":"https://www.drmerrickdds.com","FL":"url","target":"website",
-# "LOC":"https://www.drmerrickdds.com","adclick":true,"iid":"cfe2c449-0c0d-48b2-bfd0-0dde20f58b60"}' 
-# href="https://www.drmerrickdds.com" rel="nofollow noopener" target="_blank">Website</a>
+    data_frame.to_csv('alldata.csv',mode='w')
